@@ -1,4 +1,4 @@
-# 💧 PhotonDrop
+# PhotonDrop
 
 <div align="center">
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 🌟 What is PhotonDrop?
+## What is PhotonDrop?
 
 Imagine you need to transfer a highly confidential document, a crypto wallet key, or a private photo to a device that is completely disconnected from the world. No Wi-Fi, no cellular data, no Bluetooth, and no USB cables (which can carry malware). 
 
@@ -27,16 +27,16 @@ Imagine you need to transfer a highly confidential document, a crypto wallet key
 
 ---
 
-## 🎯 Who is this for?
+## Who Is This For?
 
-- 🛡️ **Cybersecurity Professionals:** Transferring logs or configurations to air-gapped (isolated) secure servers.
-- 💰 **Crypto Holders:** Moving private keys or seed phrases to offline "cold storage" devices without exposing them to the internet.
-- 🕵️ **Journalists & Whistleblowers:** Sharing sensitive evidence between phones in hostile environments where networks are monitored or jammed.
-- 🏢 **Enterprise & Government:** Moving data safely into highly restricted facilities where wireless signals are strictly prohibited.
+- **Cybersecurity Professionals:** Transferring logs or configurations to air-gapped (isolated) secure servers.
+- **Crypto Holders:** Moving private keys or seed phrases to offline "cold storage" devices without exposing them to the internet.
+- **Journalists & Whistleblowers:** Sharing sensitive evidence between phones in hostile environments where networks are monitored or jammed.
+- **Enterprise & Government:** Moving data safely into highly restricted facilities where wireless signals are strictly prohibited.
 
 ---
 
-## 📱 How It Works (The User Experience)
+## How It Works (User Experience)
 
 Using PhotonDrop is as easy as taking a video:
 
@@ -50,11 +50,11 @@ Using PhotonDrop is as easy as taking a video:
     <tr>
       <td align="center" width="50%">
         <img src="assets/preview_image.png" width="300px" alt="Image Transfer Preview" /><br/>
-        <b>📷 Photo / Media Instant Preview</b>
+        <b>Photo / Media Instant Preview</b>
       </td>
       <td align="center" width="50%">
         <img src="assets/preview_text.png" width="300px" alt="Text Snippet Preview" /><br/>
-        <b>📝 Text Snippet & Secure Key Stream</b>
+        <b>Text Snippet & Secure Key Stream</b>
       </td>
     </tr>
   </table>
@@ -62,7 +62,7 @@ Using PhotonDrop is as easy as taking a video:
 
 ---
 
-## 🧠 Under The Hood: Technical Architecture
+## Under The Hood: Technical Architecture
 
 For the engineers and security researchers, here is how PhotonDrop achieves lossless data transfer over an unreliable optical medium (a camera lens) without any network protocols (like TCP/IP).
 
@@ -86,7 +86,7 @@ Once the receiver mathematically solves the file, it undergoes a strict **SHA-25
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Layer | Technologies & Implementations |
 | :--- | :--- |
@@ -98,7 +98,7 @@ Once the receiver mathematically solves the file, it undergoes a strict **SHA-25
 
 ---
 
-## 🔗 Live Demo & Contact
+## Live Demo & Reference
 
 - **Try The Sender Portal:** [PhotonDrop Web Interface](https://ummugulsunn.github.io/photondrop-app)
 - **Repository Type:** Private Engineering Portfolio
