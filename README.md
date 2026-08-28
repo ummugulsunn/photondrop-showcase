@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![PhotonDrop Logo](assets/logo.svg)
+<img src="assets/logo.png" width="95" alt="PhotonDrop 3D Logo" />
 
 ### **Zero-Network • Air-Gapped • Optical Data Transmission**
 *High-throughput, unidirectional file & data streaming via animated optical QR fountain codes.*
