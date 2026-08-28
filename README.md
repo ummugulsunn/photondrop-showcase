@@ -67,6 +67,39 @@ Traditional air-gapped data transfers rely on physical USB drives or isolated st
 
 ---
 
+---
+
+## 🧠 Architecture Deep Dive: How It Works Under The Hood
+
+To transfer megabytes of data losslessly through a camera lens without any network protocols (TCP/IP), PhotonDrop employs a custom **Forward Error Correction (FEC)** and optical pipeline. Here is the step-by-step logic of a transmission lifecycle:
+
+### 1. File Packing & Encryption (DCF2)
+When a user selects a file (image, text, or video), it is converted into a raw `Uint8Array`. The system prepends a custom header containing the file's name, MIME type, and exact byte size. If security is required, the entire payload is encrypted using **AES-256-GCM**. This unified binary blob is packaged into the **Decimen Container Format 2 (DCF2)**.
+
+### 2. Fountain Code Generation (The Waterfall)
+In traditional networking, if a packet is lost, the receiver requests a retransmission. In a unidirectional optical transfer (screen to camera), retransmission requests are impossible. 
+To solve this, PhotonDrop uses **Luby Transform (LT) Fountain Codes**:
+- The DCF2 container is divided into equal-sized chunks (e.g., 100 blocks).
+- Instead of transmitting blocks sequentially (1, 2, 3...), the sender mathematically mixes them using the **XOR** operator based on a Robust Soliton Distribution. 
+- A single QR frame might contain the XOR combination of *Block 1 + Block 14 + Block 55*.
+- The sender generates an **infinite, non-repeating stream** of these combinations (like droplets from a fountain).
+- The receiver only needs to capture *any* random subset of these droplets (e.g., any 105 frames for a 100-block file) to mathematically reconstruct the original file. Missed frames (due to camera blur or glare) are simply ignored.
+
+### 3. Screen-to-Lens Optical Streaming
+These mathematical combinations are encoded into dense QR codes and flashed on the sender's screen at **15 to 30 FPS**. The data has successfully been converted entirely into photons.
+
+### 4. Native iOS Lossless Byte Recovery
+Standard mobile QR scanners automatically attempt to parse QR payloads as UTF-8 strings. This instantly corrupts high-entropy binary data (like encrypted files or compressed archives). 
+PhotonDrop bypasses standard scanner libraries entirely. It injects a custom **Swift patch** directly into iOS `AVFoundation`, intercepting the `CIQRCodeDescriptor.errorCorrectedPayload` at the hardware level. This extracts the raw **ISO-8859-1 (Latin1)** bytes with absolute zero corruption, streaming them into the React Native (Hermes) JavaScript engine.
+
+### 5. Gaussian Elimination & Verification
+Once the receiver's camera ingests enough droplets:
+1. It builds a mathematical matrix and uses **Gaussian Elimination** (or Belief Propagation) to solve the XOR equations, perfectly recovering the 100 original blocks.
+2. The payload undergoes a strict **SHA-256 cryptographic checksum** validation.
+3. The custom React Native UTF-8 Polyfill engine reads the DCF2 header, extracts the true file name and MIME type, and instantly renders an in-memory preview (like a cat photo or text snippet) without writing to the device's storage until explicitly saved.
+
+---
+
 ## 📱 Interface & Experience Showcase
 
 <div align="center">
