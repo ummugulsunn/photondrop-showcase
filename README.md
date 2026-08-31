@@ -11,6 +11,7 @@
 [![Security: Air-Gapped](https://img.shields.io/badge/Security-100%25%20Air--Gapped-10b981?style=for-the-badge&logo=shield)](https://github.com/ummugulsunn)
 [![Protocol: Fountain Codes](https://img.shields.io/badge/Engine-LT%20Fountain%20Codes-6366f1?style=for-the-badge)](https://github.com/ummugulsunn)
 
+[![Download on the App Store](https://img.shields.io/badge/Download-App_Store-000000?style=for-the-badge&logo=apple&logoColor=white)](https://apps.apple.com/app/photondrop-file-transfer/id6805430595)
 </div>
 
 ---
@@ -101,6 +102,7 @@ Once the receiver mathematically solves the file, it undergoes a strict **SHA-25
 ## Live Demo & Reference
 
 - **Try The Sender Portal:** [PhotonDrop Web Interface](https://ummugulsunn.github.io/photondrop-app)
+- **Download the App:** [PhotonDrop on the App Store](https://apps.apple.com/app/photondrop-file-transfer/id6805430595)
 - **Repository Type:** Private Engineering Portfolio
 - **Lead Developer & Architect:** Ümmügülsün ([@ummugulsunn](https://github.com/ummugulsunn))
 
